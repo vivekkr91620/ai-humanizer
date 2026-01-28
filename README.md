@@ -18,6 +18,22 @@ AI Humanizer is a simple web app that rewrites text to sound more natural and hu
     index.html
     style.css
     script.js
+  /frontend-react
+    index.html
+    vite.config.js
+    package.json
+    /src
+      App.jsx
+      main.jsx
+      styles.css
+      /components
+        ActionButtons.jsx
+        IntensitySelector.jsx
+        OutputPanel.jsx
+        TextInput.jsx
+        ToneSelector.jsx
+      /services
+        api.js
   /backend
     server.js
     package.json
@@ -45,6 +61,27 @@ By default it runs on http://localhost:3000
 ### 4) Open the frontend
 - Open `frontend/index.html` in your browser.
 - You can double-click the file or use a simple static server.
+
+## React frontend (optional upgrade)
+The repository includes a **separate React version** of the frontend in `frontend-react`. The original HTML version is still available for beginners who want a no-build setup.
+
+### 1) Install React dependencies
+```bash
+cd frontend-react
+npm install
+```
+
+### 2) Start the React dev server
+```bash
+npm run dev
+```
+Vite will print the local URL (usually http://localhost:5173).
+
+### 3) Configure the API URL (optional)
+If your backend runs on a different host/port, set `VITE_API_URL`:
+```bash
+VITE_API_URL=\"http://localhost:3000/humanize\" npm run dev
+```
 
 ## How the AI integration works
 - The backend calls an external AI API if an API key is present.
